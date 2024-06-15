@@ -7,6 +7,12 @@ import weatherIcons from "../store/data.json"
 
 const CurrentWeather = (props) => {
   const { weather, main, wind, dt } = props.weatherData;
+  const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  };
  
   // const weatherIconMap = {
   //   Clouds: cloudyIcon,
@@ -24,27 +30,27 @@ const CurrentWeather = (props) => {
 
   return (
     <div> 
-      <h2 className="text-2xl font-bold mb-4 flex items-center">
+      <h2 className="text-2xl font-bold mb-2 flex items-center">
         {weatherDescription}
         <img src={weatherIcon} alt={weatherIcon} className="w-10 h-10" />
       </h2>
       <div className="flex justify-between items-center">
         <div>
-          <div className="text-6xl">{Math.round(main.temp)}°C</div>
-          <div>{new Date(dt * 1000).toLocaleDateString()}</div>
+          <div className="text-6xl font-semibold">{Math.round(main.temp)}°C</div>
+          <div className="text-gray-600">{new Date(dt * 1000).toLocaleDateString('en-US', options)}</div>
         </div>
         <div>
-          <div className="flex items-center">
+          <div className="flex items-center text-gray-500">
             <img src={humidityIcon} alt="Humidity" className="w-6 h-6" />
-            Humidity: {main.humidity}%
+            Humidity: <span className="text-black ml-1.5"> {main.humidity}% </span>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center text-gray-500">
             <img
               src={windSpeedIcon}
               alt="Wind Speed"
               className="w-6 h-6"
             />
-            Wind Speed: {wind.speed} m/s
+            Wind Speed: <span className="text-black ml-1.5">{wind.speed} m/s </span>
           </div>
         </div>
       </div>
