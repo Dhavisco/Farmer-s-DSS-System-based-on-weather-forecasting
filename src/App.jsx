@@ -44,7 +44,7 @@ function App() {
 
 
   return (
-    <div className="min-h-screen p-8 bg-gray-100 flex items-center justify-around">
+    <div className="lg:min-h-screen p-8 bg-gray-100 flex lg:flex-row flex-col gap-4 items-center justify-around">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <WeatherInput city={city} setCity={setCity} />
         {error && (
@@ -58,7 +58,7 @@ function App() {
         )}
       </div>
 
-      <div className="w-3/5">
+      <div className="lg:w-3/5">
         <RecommendedCropsList recommendedCrops={dummyRecommendedCrops} />
       </div>
     </div>

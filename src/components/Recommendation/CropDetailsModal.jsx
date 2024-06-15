@@ -2,8 +2,8 @@
 
 const CropDetailsModal = ({ crop, onClose }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="bg-white rounded-lg shadow-lg p-8 max-w-md">
+    <div className="fixed inset-0 z-50 flex items-center justify-center lg:mg-1 m-14">
+      <div className="bg-[#f1e9e9] rounded-lg shadow-lg p-8 max-w-md">
         <button
           className="top-4 right-4 border-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"
           onClick={onClose}
