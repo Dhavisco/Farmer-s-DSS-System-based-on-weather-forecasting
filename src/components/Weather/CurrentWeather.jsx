@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import weatherIcons from "../store/data.json"
+import weatherIcons from "../../store/data.json"
 // import cloudyIcon from "../assets/icons/cloudy.svg"; 
 // import rainIcon from "../assets/icons/rain.svg"
 // import clearIcon from "../assets/icons/clear-day.svg"
@@ -13,6 +13,7 @@ const CurrentWeather = (props) => {
     month: "short",
     day: "numeric",
   };
+ 
  
   // const weatherIconMap = {
   //   Clouds: cloudyIcon,
@@ -32,7 +33,7 @@ const CurrentWeather = (props) => {
     <div>
       <h2 className="md:text-2xl text-xl font-bold mb-2 flex items-center">
         {weatherDescription}
-        <img src={weatherIcon} alt={weatherIcon} className="w-10 h-10" />
+        <img src={weatherIcon} alt={weatherIcon} className="w-16 h-16" />
       </h2>
       <div className="flex justify-between items-center">
         <div>

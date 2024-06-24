@@ -5,6 +5,7 @@ import Chart from "chart.js/auto";
 const WeatherChart = ({ forecast = [] }) => {
   const chartRef = useRef(null);
   const canvasRef = useRef(null);
+  const { time, temperature_2m_mean } = forecast;
 
   useEffect(() => {
     if (chartRef.current) {
@@ -12,13 +13,14 @@ const WeatherChart = ({ forecast = [] }) => {
     }
 
     const data = {
-      labels: forecast.map((day) =>
-        new Date(day.dt * 1000).toLocaleDateString()
+      labels: time.map((day) =>
+       day
+        
       ),
       datasets: [
         {
           label: "Temperature",
-          data: forecast.map((day) => day.temp.day),
+          data: temperature_2m_mean.map((day) => day),
           borderColor: "rgba(75,192,192,1)",
           backgroundColor: "rgba(75,192,192,0.2)",
         },
@@ -38,7 +40,7 @@ const WeatherChart = ({ forecast = [] }) => {
         chartRef.current.destroy();
       }
     };
-  }, [forecast]);
+  }, [forecast, time, temperature_2m_mean]);
 
   return <canvas ref={canvasRef} id="weather-chart"></canvas>;
 };
@@ -47,20 +49,10 @@ const WeatherChart = ({ forecast = [] }) => {
 
 //Specifying proptypes
 WeatherChart.propTypes = {
-  forecast: PropTypes.arrayOf(
-    PropTypes.shape({
-      dt: PropTypes.number.isRequired,
-      temp: PropTypes.shape({
-        day: PropTypes.number.isRequired,
-      }).isRequired,
-      humidity: PropTypes.number,
-      weather: PropTypes.arrayOf(
-        PropTypes.shape({
-          description: PropTypes.string,
-        })
-      ),
-    })
-  ).isRequired,
+forecast: PropTypes.shape({
+  time: PropTypes.arrayOf(PropTypes.string).isRequired,
+  temperature_2m_mean: PropTypes.arrayOf(PropTypes.number).isRequired,
+})
 };
 
 export default WeatherChart;

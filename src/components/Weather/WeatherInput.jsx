@@ -1,15 +1,12 @@
 import PropTypes from "prop-types";
 
-const WeatherInput = (props) => {
-  const city = props.city;
-  const setCity = props.setCity;
-
-const inputHandler = (e) => {
-setCity(e.target.value)
-}
+const WeatherInput = ({ city, setCity }) => {
+  const inputHandler = (e) => {
+    setCity(e.target.value);
+  };
 
   return (
-    <div className="mb-4 relative">
+    <div className="mb-4 relative w-4/5">
       <input
         type="text"
         value={city}
@@ -36,10 +33,10 @@ setCity(e.target.value)
   );
 };
 
-//Specifying proptypes
+// Specifying proptypes
 WeatherInput.propTypes = {
   city: PropTypes.string.isRequired,
-  setCity: PropTypes.func.isRequired
+  setCity: PropTypes.func.isRequired,
 };
 
 export default WeatherInput;

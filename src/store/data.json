@@ -15,7 +15,9 @@
   "Squall": "/assets/icons/squall.svg",
   "Tornado": "/assets/icons/tornado.svg",
   "Humidity": "/assets/icons/humidity.svg",
-  "WindSpeed": "/assets/icons/wind.svg"
+  "WindSpeed": "/assets/icons/wind.svg",
+  "Temperature": "/assets/icons/thermometer-celsius.svg"
+
 }
 
 

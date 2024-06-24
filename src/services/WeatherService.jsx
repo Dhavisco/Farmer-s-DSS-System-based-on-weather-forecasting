@@ -35,16 +35,55 @@ export const getWeatherData = async (city) => {
 
 // const BASE_URL_WEATHERCROP = import.meta.env.VITE_BASE_URL_WEATHERCROP;
 
-const getWeatherForecastData = async () => {
+// export const getWeatherForecastData = async (city) => {
+//   console.log(city);
+
+//   try {
+//     const response = await fetch(
+//       `https://weather-crop-api.vercel.app/weather/history/Lagos/2024-06-07/2024-06-15`
+//     );
+
+//     if (!response.ok) {
+//       throw new Error(`HTTP error ${response.status}`);
+//     }
+
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error("Error fetching weather forecast data:", error);
+//     throw error;
+//   }
+// };
+
+export const getWeatherForecastData = async (city) => {
+  console.log(city);
+
+  const startDate = "2024-06-14";
+  const endDate = "2024-06-21";
+
   try {
     const response = await fetch(
-      'https://weather-crop-api.vercel.app/weather/forecast/Abuja?start_date=2024-06-07&end_date=2024-06-15',
-      {
-        mode:'no-cors',
-        headers: {
-          'Accept': 'application/json'
-        }
-      }
+      `https://weather-crop-api.vercel.app/weather/history/${city}/${startDate}/${endDate}`
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching weather forecast data:", error);
+    throw error;
+  }
+};
+
+export const getRecommendedCropsData = async (city) => {
+
+  try {
+    const response = await fetch(
+      `https://weather-crop-api.vercel.app/weather/forecast/${city}`
     );
 
     if (!response.ok) {
@@ -59,10 +98,11 @@ const getWeatherForecastData = async () => {
   }
 };
 
+
 // Usage
-getWeatherForecastData()
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+// getWeatherForecastData(city)
+//   .then(data => console.log(data))
+//   .catch(error => console.error(error));
 
 // export const getWeatherData = async (city) => {
 //   try {
