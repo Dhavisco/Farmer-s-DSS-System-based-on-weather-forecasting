@@ -5,6 +5,9 @@ import "./App.css";
 import Loading from "./components/Loading";
 import Nav from "./layout/Nav";
 import MainContent from "./components/MainContent"
+import { RxAvatar } from "react-icons/rx";
+import { PiPottedPlant } from "react-icons/pi";
+import Icon from "./components/Icon";
 
 
 function App() {
@@ -61,7 +64,13 @@ function App() {
   }
 
   return (
-    <div className="flex gap-4">
+    <div className="flex lg:flex-row flex-col gap-4">
+      <div className="lg:hidden flex justify-between items-center border-b-2 border-solid border-[#696969ea] fixed p-3 w-full z-30 bg-gray-200 text-lg font-semibold">
+       <Icon/>
+        <div>
+          <RxAvatar className="w-[2.5rem] h-[2.5rem] text-green-700" />
+        </div>
+      </div>
       <nav className="fixed w-[20%] z-30 hidden lg:block md:block">
         <Nav active={active} setActive={setActive} />
       </nav>
@@ -74,6 +83,10 @@ function App() {
         cropData={cropData}
         error={error}
       />
+
+      <nav className="fixed bottom-0 w-full lg:hidden z-30 bg-[#f3f2f2] px-12 border-solid border-[#4e4d4d] border-t-2 rounded-3xl">
+        <Nav active={active} setActive={setActive} />
+      </nav>
     </div>
   );
 }

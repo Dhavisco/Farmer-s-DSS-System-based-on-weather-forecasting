@@ -25,15 +25,15 @@ const RecommendedCropCard = ({ crop, weatherData }) => {
         className="bg-gray-100 my-1 rounded-lg shadow-md p-4 cursor-pointer"
         onClick={handleShowModal}
       >
-        <h3 className="text-lg font-semibold">{crop.crop}</h3>
+        <h3 className="lg:text-lg font-semibold">{crop.crop}</h3>
         <p
-          className={`text-sm font-base ${getScoreColor(
+          className={`lg:text-sm text-xs font-base ${getScoreColor(
             crop.suitability_score
           )}`}
         >
           Suitability Score: {crop.suitability_score}/10
         </p>
-        <button className="text-sm text-yellow-400 font-medium float-right hover:text-yellow-500">
+        <button className="lg:text-sm text-xs text-yellow-400 font-medium float-right hover:text-yellow-500">
           See More
         </button>
       </div>

@@ -18,7 +18,7 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
   const temperatureIcon = weatherIcons["Temperature"];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center lg:mg-1 m-14">
+    <div className="fixed inset-0 z-50 flex items-center justify-center m-10 lg:m-14">
       <div className="bg-[#f1e9e9] rounded-lg shadow-lg p-8 max-w-md">
         <button
           className="top-4 right-4 border-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"
@@ -40,16 +40,16 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
         </button>
         <div className="flex lg:flex-row justify-between">
           <div>
-            <h3 className="text-xl font-semibold mb-1">{crop.crop}</h3>
+            <h3 className="lg:text-xl font-semibold mb-1">{crop.crop}</h3>
             <p
-              className={`text-sm font-base mb-4 ${getScoreColor(
+              className={`lg:text-sm text-xs font-base mb-4 ${getScoreColor(
                 crop.suitability_score
               )}`}
             >
               Suitability Score: {crop.suitability_score}/10
             </p>
           </div>
-          <div className="flex flex-col justify-start items-start mr-4 tracking-[0.07rem]">
+          <div className="flex flex-col justify-start items-start lg:mr-4 tracking-[0.07rem]">
             <div className="flex items-center text-gray-800 text-xs md:text-base">
               <img src={temperatureIcon} alt="Humidity" className="w-7 h-7" />
               <span className="text-black ml-1.5 md:text-base text-sm font-medium">
@@ -73,10 +73,16 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
           </div>
         </div>
 
-        <h4 className="text-lg font-semibold mb-1.5">Growing Recommendation</h4>
-        <p className="mb-4 text">{crop.growing_recommendation}</p>
-        <h4 className="text-lg font-semibold mb-1.5">Relevant Information</h4>
-        <p>{crop.relevant_information}</p>
+        <h4 className="lg:text-lg font-semibold mb-1.5">
+          Growing Recommendation
+        </h4>
+        <p className="mb-4 text-sm lg:text-base">
+          {crop.growing_recommendation}
+        </p>
+        <h4 className="lg:text-lg font-semibold mb-1.5">
+          Relevant Information
+        </h4>
+        <p className="text-sm lg:text-base">{crop.relevant_information}</p>
       </div>
     </div>
   );

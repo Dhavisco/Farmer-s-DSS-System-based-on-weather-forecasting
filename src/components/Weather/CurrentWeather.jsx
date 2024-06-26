@@ -30,34 +30,34 @@ const CurrentWeather = (props) => {
    const windSpeedIcon = weatherIcons["WindSpeed"];
 
   return (
-    <div>
-      <h2 className="md:text-2xl text-xl font-bold mb-2 flex items-center">
+    <>
+      <div className="md:text-2xl text-lg font-bold capitalize lg:mb-2 flex items-center">
         {weatherDescription}
-        <img src={weatherIcon} alt={weatherIcon} className="w-16 h-16" />
-      </h2>
+        <img src={weatherIcon} alt={weatherIcon} className="lg:w-16 lg:h-16 w-14 h-14" />
+      </div>
       <div className="flex justify-between items-center">
         <div>
-          <div className="md:text-6xl text-5xl font-semibold">
+          <div className="md:text-6xl text-4xl font-semibold">
             {Math.round(main.temp)}°C
           </div>
-          <div className="text-gray-600 text-sm md:text-lg">
+          <div className="text-gray-600 text-xs md:text-lg">
             {new Date(dt * 1000).toLocaleDateString("en-US", options)}
           </div>
         </div>
         <div>
-          <div className="flex items-center text-gray-500 text-sm md:text-lg">
+          <div className="flex items-center text-gray-500 text-xs md:text-base">
             <img src={humidityIcon} alt="Humidity" className="w-6 h-6" />
             Humidity:{" "}
             <span className="text-black ml-1.5"> {main.humidity}% </span>
           </div>
-          <div className="flex items-center text-gray-500 text-sm md:text-lg">
+          <div className="flex items-center text-gray-500 text-xs md:text-base">
             <img src={windSpeedIcon} alt="Wind Speed" className="w-6 h-6" />
             Wind Speed:{" "}
             <span className="text-black ml-1.5">{wind.speed} m/s </span>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

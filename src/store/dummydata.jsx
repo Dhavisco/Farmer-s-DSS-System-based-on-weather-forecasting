@@ -1,4 +1,11 @@
-import { LuLayoutDashboard } from "react-icons/lu";
+import {
+  LuLayoutDashboard,
+  // Import other icons as needed
+} from "react-icons/lu";
+// import { RiFileList3Line } from "react-icons/ri";
+import { BsClockHistory } from "react-icons/bs";
+import { IoSettingsOutline } from "react-icons/io5";
+import { PiPottedPlant} from "react-icons/pi";
 
 export const navLists = [
   {
@@ -7,18 +14,18 @@ export const navLists = [
     link: "/",
   },
   {
-    name: "Recommendation",
-    logo: "",
+    name: "Crops",
+    logo: <PiPottedPlant className="text-2xl" />,
     link: "#",
   },
   {
     name: "History",
-    logo: "",
+    logo: <BsClockHistory className="text-2xl" />,
     link: "#",
   },
   {
     name: "Settings",
-    logo: "",
+    logo: <IoSettingsOutline className="text-2xl" />,
     link: "#",
   },
 ];
