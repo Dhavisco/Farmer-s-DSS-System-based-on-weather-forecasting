@@ -5,29 +5,20 @@ import weatherIcons from "../../store/data.json"
 // import clearIcon from "../assets/icons/clear-day.svg"
 
 
-const CurrentWeather = (props) => {
-  const { weather, main, wind, dt } = props.weatherData;
+const CurrentWeather = ({ weatherData }) => {
+  const { description, humidity, main, temp, wind_speed } = weatherData;
   const options = {
     weekday: "short",
     year: "numeric",
     month: "short",
     day: "numeric",
   };
- 
- 
-  // const weatherIconMap = {
-  //   Clouds: cloudyIcon,
-  //   Rain: rainIcon,
-  //   Clear: clearIcon,
-    
-  //  
-  // };
 
-  const weatherDescription = weather[0].description;
-  const weatherMain = weather[0].main;
+  const weatherDescription = description;
+  const weatherMain = main;
   const weatherIcon = weatherIcons[weatherMain] || weatherIcons['Clear']; // Fallback to a default icon if not mapped
-   const humidityIcon = weatherIcons["Humidity"];
-   const windSpeedIcon = weatherIcons["WindSpeed"];
+  const humidityIcon = weatherIcons["Humidity"];
+  const windSpeedIcon = weatherIcons["WindSpeed"];
 
   return (
     <>
@@ -38,22 +29,22 @@ const CurrentWeather = (props) => {
       <div className="flex justify-between items-center">
         <div>
           <div className="md:text-6xl text-4xl font-semibold">
-            {Math.round(main.temp)}°C
+            {Math.round(temp)}°C
           </div>
           <div className="text-gray-600 text-xs md:text-lg">
-            {new Date(dt * 1000).toLocaleDateString("en-US", options)}
+            {new Date().toLocaleDateString("en-US", options)}
           </div>
         </div>
         <div>
           <div className="flex items-center text-gray-500 text-xs md:text-base">
             <img src={humidityIcon} alt="Humidity" className="w-6 h-6" />
             Humidity:{" "}
-            <span className="text-black ml-1.5"> {main.humidity}% </span>
+            <span className="text-black ml-1.5"> {humidity}% </span>
           </div>
           <div className="flex items-center text-gray-500 text-xs md:text-base">
             <img src={windSpeedIcon} alt="Wind Speed" className="w-6 h-6" />
             Wind Speed:{" "}
-            <span className="text-black ml-1.5">{wind.speed} m/s </span>
+            <span className="text-black ml-1.5">{wind_speed} m/s </span>
           </div>
         </div>
       </div>
@@ -63,21 +54,13 @@ const CurrentWeather = (props) => {
 
 CurrentWeather.propTypes = {
   weatherData: PropTypes.shape({
-    weather: PropTypes.arrayOf(
-      PropTypes.shape({
-        description: PropTypes.string.isRequired,
-        main: PropTypes.string.isRequired,
-      })
-    ).isRequired,
-    main: PropTypes.shape({
-      temp: PropTypes.number.isRequired,
-      humidity: PropTypes.number.isRequired,
-    }).isRequired,
-    wind: PropTypes.shape({
-      speed: PropTypes.number.isRequired,
-    }).isRequired,
-    dt: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    humidity: PropTypes.number.isRequired,
+    main: PropTypes.string.isRequired,
+    temp: PropTypes.number.isRequired,
+    wind_speed: PropTypes.number.isRequired,
   }).isRequired,
 };
+
 
 export default CurrentWeather;

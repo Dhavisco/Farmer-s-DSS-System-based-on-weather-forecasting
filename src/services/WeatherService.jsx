@@ -1,10 +1,14 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
+// const API_KEY = import.meta.env.VITE_API_KEY;
+// const BASE_URL = import.meta.env.VITE_BASE_URL;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 export const getWeatherData = async (city) => {
   try {
     const currentWeatherResponse = await fetch(
-      `${BASE_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`
+      `${BASE_URL}/weather/${city}`
+
+      // `${BASE_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`
+
     );
     // const forecastResponse = await fetch(
     //   `${BASE_URL}/forecast/daily?q=${city}&cnt=7&appid=${API_KEY}&units=metric`
@@ -86,7 +90,7 @@ export const getWeatherForecastData = async (city) => {
 
   try {
     const response = await fetch(
-      `https://weather-crop-api.vercel.app/weather/history/${city}/${formattedStartDate}/${formattedEndDate}`
+      `${BASE_URL}/weather/history/${city}/${formattedStartDate}/${formattedEndDate}`
     );
 
     if (!response.ok) {
@@ -104,9 +108,7 @@ export const getWeatherForecastData = async (city) => {
 
 export const getRecommendedCropsData = async (city) => {
   try {
-    const response = await fetch(
-      `https://weather-crop-api.vercel.app/weather/forecast/${city}`
-    );
+    const response = await fetch(`${BASE_URL}/weather/forecast/${city}`);
 
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}`);

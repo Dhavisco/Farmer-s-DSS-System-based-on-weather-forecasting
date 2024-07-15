@@ -112,8 +112,8 @@ const MainContent = ({
                     </div>
                   )}
                   {city && (
-                    <div className=" lg:w-5/6 lg:mb-0 mb-20 border-solid justify-center items-center flex-col bg-[#f3f3f3] p-3 py-5 rounded-lg border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
-                      <div className="text-lg w-fit float-right text-right cursor-pointer gap-4 tracking-wider bg-[#dffd8d] p-1.5 rounded-sm text-gray-700 font-semibold">
+                    <div className=" w-5/6 lg:mb-0 mb-20 border-solid lg:justify-center items-center flex-col lg:flex-col bg-[#f3f3f3] p-3 py-10 rounded-lg border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
+                      <div className="lg:text-lg hidden lg:block w-fit float-right text-right cursor-pointer tracking-wider bg-[#dffd8d] p-1.5 rounded-sm text-gray-700 font-semibold">
                         Weather History
                       </div>
                       <div className="lg:m-8 flex justify-center">
