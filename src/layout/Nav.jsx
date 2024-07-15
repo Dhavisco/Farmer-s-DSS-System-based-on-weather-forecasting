@@ -6,13 +6,18 @@ const Nav = ({ active, setActive }) => {
     <nav className="lg:py-2 lg:border-2 lg:h-screen lg:bg-[#f3f3f3]">
       <div className="hidden lg:block p-3 text-3xl cursor-pointer">
         <Icon />
-        <div className="text-xs italic ml-12">Re-imagine your crops . . .</div>
+        <div className="text-xs italic font-medium ml-12 text-[#6f921eea]">
+          Re-imagine your crops . . .
+        </div>
+        <div className="mt-6">
+          <hr className=" border-black"/>
+        </div>
       </div>
-      <div className="lg:mt-16 flex justify-between lg:justify-start lg:items-start items-center lg:flex-col">
+      <div className="lg:mt-16 flex justify-between lg:justify-start lg:items-start items-center lg:flex-col ">
         {navLists.map((val, index) => (
           <div key={index} className="lg:py-4 py-2">
             <div
-              className={`lg:p-6 p-3 lg:pt-3 flex lg:gap-4 items-center text-xl hover:cursor-pointer ${
+              className={`lg:p-4 p-3 lg:pt-3  flex lg:gap-4 items-center text-xl hover:cursor-pointer ${
                 active === index
                   ? "lg:bg-[#F2FED1] lg:ml-[-1rem] lg:px-12 bg-[#abf600] border-2 border-b-[5px] border-black rounded-2xl"
                   : "hover:bg-white lg:ml-[-1rem] lg:px-12 rounded-2xl"
@@ -20,7 +25,9 @@ const Nav = ({ active, setActive }) => {
               onClick={() => setActive(index)}
             >
               <div>{val.logo}</div>
-              <div className="hidden lg:block">{val.name}</div>
+              <div className="hidden lg:block text-base font-medium">
+                {val.name}
+              </div>
             </div>
           </div>
         ))}

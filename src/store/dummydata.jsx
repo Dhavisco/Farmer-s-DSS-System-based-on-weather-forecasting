@@ -3,9 +3,10 @@ import {
   // Import other icons as needed
 } from "react-icons/lu";
 // import { RiFileList3Line } from "react-icons/ri";
-import { BsClockHistory } from "react-icons/bs";
+// import { BsClockHistory } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { PiPottedPlant} from "react-icons/pi";
+import { FiMessageCircle } from "react-icons/fi";
 
 export const navLists = [
   {
@@ -19,8 +20,8 @@ export const navLists = [
     link: "#",
   },
   {
-    name: "History",
-    logo: <BsClockHistory className="text-2xl" />,
+    name: "Message Alert",
+    logo: <FiMessageCircle className="text-2xl" />,
     link: "#",
   },
   {

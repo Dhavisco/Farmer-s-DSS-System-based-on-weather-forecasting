@@ -9,8 +9,6 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
 
   const { weather, main, wind} = weatherData;
 
-  console.log(weatherData);
-
   // const weatherMain = weather[0].main;
   // const weatherIcon = weatherIcons[weatherMain] || weatherIcons["Clear"]; // Fallback to a default icon if not mapped
   const humidityIcon = weatherIcons["Humidity"];
@@ -19,9 +17,10 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center m-10 lg:m-14">
-      <div className="bg-[#f1e9e9] rounded-lg shadow-lg p-8 max-w-md">
+      <div className="bg-[#f1e9e9] flex flex-col rounded-lg shadow-lg p-8 max-w-md">
+        <div className="flex justify-end">
         <button
-          className="top-4 right-4 border-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"
+          className="border-[2.3px] mb-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"
           onClick={onClose}
         >
           <svg
@@ -38,6 +37,7 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
             />
           </svg>
         </button>
+        </div>
         <div className="flex lg:flex-row justify-between">
           <div>
             <h3 className="lg:text-xl font-semibold mb-1">{crop.crop}</h3>

@@ -33,7 +33,7 @@ const RecommendedCropCard = ({ crop, weatherData }) => {
         >
           Suitability Score: {crop.suitability_score}/10
         </p>
-        <button className="lg:text-sm text-xs text-yellow-400 font-medium float-right hover:text-yellow-500">
+        <button className="lg:text-sm text-xs text-black-400 font-normal mt-2 hover:font-medium">
           See More
         </button>
       </div>
