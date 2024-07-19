@@ -1,9 +1,11 @@
 import { useState } from "react";
 import CropDetailsModal from "./CropDetailsModal";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const RecommendedCropCard = ({ crop, weatherData }) => {
   const [showModal, setShowModal] = useState(false);
+
+  
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -14,18 +16,18 @@ const RecommendedCropCard = ({ crop, weatherData }) => {
   };
 
   const getScoreColor = (score) => {
-     if (score >= 7) return "text-green-500";
-     if (score >= 5) return "text-yellow-500";
-     return "text-red-500";
-  }
+    if (score >= 7) return "text-green-500";
+    if (score >= 5) return "text-yellow-500";
+    return "text-red-500";
+  };
 
   return (
     <>
       <div
-        className="bg-gray-100 my-1 rounded-lg shadow-md p-4 cursor-pointer"
+        className=" my-1 rounded-lg shadow-md border-black border-[1px] border-b-4 hover:scale-[1.1] p-4 cursor-pointer "
         onClick={handleShowModal}
       >
-        <h3 className="lg:text-lg font-semibold">{crop.crop}</h3>
+        <h3 className="lg:text-lg font-bold">{crop.crop}</h3>
         <p
           className={`lg:text-sm text-xs font-base ${getScoreColor(
             crop.suitability_score
@@ -37,7 +39,13 @@ const RecommendedCropCard = ({ crop, weatherData }) => {
           See More
         </button>
       </div>
-      {showModal && <CropDetailsModal crop={crop} weatherData={weatherData} onClose={handleCloseModal} />}
+      {showModal && (
+        <CropDetailsModal
+          crop={crop}
+          weatherData={weatherData}
+          onClose={handleCloseModal}
+        />
+      )}
     </>
   );
 };

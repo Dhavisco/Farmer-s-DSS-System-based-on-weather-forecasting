@@ -1,29 +1,23 @@
 import RecommendedCropCard from "./RecommendedCropCard";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { PiPottedPlantLight } from "react-icons/pi";
 
-
 const RecommendedCropsList = ({ weatherData, cropData, city }) => {
-
- 
   return (
-    <div className=" bg-[#F3F3F3] rounded shadow-md p-6 m-2 lg:p-8">
+    <div className=" bg-[#0f3828] text-white rounded shadow-md p-6 m-2 ml-4 lg:p-8">
       <div className="flex justify-between mb-2">
         <div className="flex justify-start gap-1">
           <div className="lg:text-lg font-semibold mb-2">
             Recommended Crops{" "}
-            <span className="pt-1 lg:pt-1">
-              <PiPottedPlantLight className="text-red-800 text-lg lg:text-xl" />
-            </span>
           </div>
         </div>
 
-        <div className="font-medium text-xs lg:items-center lg:text-lg flex lg:bg-[#dffd8d] p-2">
+        <div className="font-medium text-xs lg:items-center text-black  lg:text-lg flex lg:bg-[#00a884] p-2">
           Location: {city}
         </div>
       </div>
 
-      <p className="font-light text-sm lg:text-base">
+      <p className="font-light text-sm lg:text-[0.73  rem] lg:text-base">
         {" "}
         Based on your location and the weather data in the past few weeks, These
         are the recommended crops and suggestions
@@ -58,4 +52,3 @@ RecommendedCropsList.propTypes = {
 };
 
 export default RecommendedCropsList;
-

@@ -24,27 +24,31 @@ const CurrentWeather = ({ weatherData }) => {
     <>
       <div className="md:text-2xl text-lg font-bold capitalize lg:mb-2 flex items-center">
         {weatherDescription}
-        <img src={weatherIcon} alt={weatherIcon} className="lg:w-16 lg:h-16 w-14 h-14" />
+        <img
+          src={weatherIcon}
+          alt={weatherIcon}
+          className="lg:w-16 lg:h-16 w-14 h-14"
+        />
       </div>
       <div className="flex justify-between items-center">
         <div>
           <div className="md:text-6xl text-4xl font-semibold">
             {Math.round(temp)}°C
           </div>
-          <div className="text-gray-600 text-xs md:text-lg">
+          <div className="text-gray-300 text-xs md:text-lg">
             {new Date().toLocaleDateString("en-US", options)}
           </div>
         </div>
         <div>
-          <div className="flex items-center text-gray-500 text-xs md:text-base">
+          <div className="flex items-center text-white text-xs md:text-base">
             <img src={humidityIcon} alt="Humidity" className="w-6 h-6" />
             Humidity:{" "}
-            <span className="text-black ml-1.5"> {humidity}% </span>
+            <span className="text-gray-300 ml-1.5 "> {humidity}% </span>
           </div>
-          <div className="flex items-center text-gray-500 text-xs md:text-base">
+          <div className="flex items-center text-white text-xs md:text-base">
             <img src={windSpeedIcon} alt="Wind Speed" className="w-6 h-6" />
             Wind Speed:{" "}
-            <span className="text-black ml-1.5">{wind_speed} m/s </span>
+            <span className="text-gray-300 ml-1.5">{wind_speed} m/s </span>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 // const API_KEY = import.meta.env.VITE_API_KEY;
 // const BASE_URL = import.meta.env.VITE_BASE_URL;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
+const USER_IP = import.meta.env.VITE_IP_URL;
 
 export const getWeatherData = async (city) => {
   try {
@@ -8,7 +9,6 @@ export const getWeatherData = async (city) => {
       `${BASE_URL}/weather/${city}`
 
       // `${BASE_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`
-
     );
     // const forecastResponse = await fetch(
     //   `${BASE_URL}/forecast/daily?q=${city}&cnt=7&appid=${API_KEY}&units=metric`
@@ -146,12 +146,11 @@ export const getRecommendedCropsData = async (city) => {
 // };
 
 export const getUserIp = () => {
-  const data = fetch("http://ip-api.com/json")
+  const data = fetch(`https://ipapi.co/json/`)
     .then((response) => {
       // Handle the response here
-      console.log(response)
+      console.log(response);
       return response.json();
-      
     })
     .then((result) => {
       // console.log("the result is =>", result);

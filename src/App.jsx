@@ -35,10 +35,12 @@ function App() {
     const fetchIPData = async () => {
       try {
         const Ipdata = await getUserIp();
-        setLon(Ipdata.lon);
-        setLat(Ipdata.lat);
+        setLon(Ipdata.longitude);
+        setLat(Ipdata.latitude);
         setUserCity(Ipdata.city);
         setCity(Ipdata.city); // Set city to IP city
+
+        console.log(Ipdata)
 
         console.log("ipcity", Ipdata.city);
       } catch (error) {

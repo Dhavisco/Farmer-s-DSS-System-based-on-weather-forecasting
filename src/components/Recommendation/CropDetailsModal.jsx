@@ -7,7 +7,8 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
     return "text-red-500";
   };
 
-  const { weather, main, wind} = weatherData;
+  const { humidity, temp, main, wind_speed } = weatherData;
+  //  { description, , main,  } = weatherData;
 
   // const weatherMain = weather[0].main;
   // const weatherIcon = weatherIcons[weatherMain] || weatherIcons["Clear"]; // Fallback to a default icon if not mapped
@@ -16,27 +17,27 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
   const temperatureIcon = weatherIcons["Temperature"];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center m-10 lg:m-14">
-      <div className="bg-[#f1e9e9] flex flex-col rounded-lg shadow-lg p-8 max-w-md">
+    <div className="fixed -top-1 right-0 overflow-hidden bg-[#000000d5] backdrop-blur-sm w-screen h-screen z-50 flex items-center fade-in justify-center">
+      <div className="bg-[#f1e9e9] flex flex-col rounded-lg shadow-lg p-8 max-w-md mb-10">
         <div className="flex justify-end">
-        <button
-          className="border-[2.3px] mb-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"
-          onClick={onClose}
-        >
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          <button
+            className="border-[2.3px] mb-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"
+            onClick={onClose}
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
         <div className="flex lg:flex-row justify-between">
           <div>
@@ -54,20 +55,20 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
               <img src={temperatureIcon} alt="Humidity" className="w-7 h-7" />
               <span className="text-black ml-1.5 md:text-base text-sm font-medium">
                 {" "}
-                {Math.round(main.temp)}°C{" "}
+                {Math.round(temp)}°C{" "}
               </span>
             </div>
             <div className="flex items-center text-gray-800 text-xs md:text-base">
               <img src={humidityIcon} alt="Humidity" className="w-7 h-7" />
               <span className="text-black ml-1.5 md:text-base text-sm font-medium">
                 {" "}
-                {main.humidity}%{" "}
+                {humidity}%{" "}
               </span>
             </div>
             <div className="flex items-center text-gray-800 text-xs md:text-base">
               <img src={windSpeedIcon} alt="Wind Speed" className="w-7 h-7" />
               <span className="text-black ml-1.5 md:text-base text-sm font-medium">
-                {wind.speed}m/s{" "}
+                {wind_speed}m/s{" "}
               </span>
             </div>
           </div>

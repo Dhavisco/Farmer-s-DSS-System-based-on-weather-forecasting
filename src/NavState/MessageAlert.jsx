@@ -1,13 +1,11 @@
-
 // import { Line, Bar } from 'react-chartjs-2';
 import img from "../../public/assets/icons/wind.svg";
 
-import Header from '../layout/Header'
-import { useState } from 'react';
+import Header from "../layout/Header";
+import { useState } from "react";
 
 const MessageAlert = (onSubmit) => {
-const page = 'Alert';
-
+  const page = "Alert";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -86,7 +84,7 @@ const page = 'Alert';
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 text-black bg-[#abf600] border-2 border-black hover:bg-[#83bd18] font-semibold rounded"
+          className="w-full py-2 px-4 text-black bg-[#0f3828] border-2 border-black hover:bg-[#0f3828] font-semibold rounded"
         >
           Sign Up for Alerts
         </button>

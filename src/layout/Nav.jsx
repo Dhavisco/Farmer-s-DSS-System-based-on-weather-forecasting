@@ -10,22 +10,22 @@ const Nav = ({ active, setActive }) => {
           Re-imagine your crops . . .
         </div>
         <div className="mt-6">
-          <hr className=" border-black"/>
+          <hr className=" border-black" />
         </div>
       </div>
       <div className="lg:mt-16 flex justify-between lg:justify-start lg:items-start items-center lg:flex-col ">
         {navLists.map((val, index) => (
           <div key={index} className="lg:py-4 py-2">
             <div
-              className={`lg:p-4 p-3 lg:pt-3  flex lg:gap-4 items-center text-xl hover:cursor-pointer ${
+              className={`lg:p-4 p-3 lg:pt-3  flex lg:gap-4 items-center text-xl hover:cursor-pointer lg:w-[20dvw] ${
                 active === index
-                  ? "lg:bg-[#F2FED1] lg:ml-[-1rem] lg:px-12 bg-[#abf600] border-2 border-b-[5px] border-black rounded-2xl"
+                  ? "lg:bg-[#0e6946] text-white lg:ml-[-1rem] lg:px-12 bg-[z] border-2 border-b-[5px] border-black rounded-2xl"
                   : "hover:bg-white lg:ml-[-1rem] lg:px-12 rounded-2xl"
               }`}
               onClick={() => setActive(index)}
             >
               <div>{val.logo}</div>
-              <div className="hidden lg:block text-base font-medium">
+              <div className="hidden lg:block text-base font-medium w-fit">
                 {val.name}
               </div>
             </div>

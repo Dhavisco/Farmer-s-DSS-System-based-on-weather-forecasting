@@ -12,6 +12,7 @@ import { RxAvatar } from "react-icons/rx";
 // import IndexModal from "./IndexModal";
 import Map from "./Map/Map";
 import { CiLocationOn } from "react-icons/ci";
+import Rechart from "./Weather/Rechart";
 // import { useStore } from "../store/store";
 
 const MainContent = ({
@@ -45,7 +46,7 @@ const MainContent = ({
             <div className=" hidden lg:flex justify-between ml-14 items-center p-4 mb-4">
               <div className="flex items-center gap-4">
                 <div className="font-semibold text-xl">
-                  <span className="bg-[#F2FED1] p-1">Dashboard</span>
+                  <span className="bg-[#00a884] p-1">Dashboard</span>
                 </div>
                 <div className="">
                   <Alert />
@@ -66,7 +67,7 @@ const MainContent = ({
               <WeatherInput city={city} setCity={setCity} />
             </div>
             <div className="flex items-center justify-center">
-              <p className="mb-1 p-5 relative w-5/6 bg-[#F2FED1] border-solid border-[#000000] border-[1px] border-b-[5px] text-sm lg:text-base shadow-md rounded-xl">
+              <p className="mb-1 p-5 relative w-5/6 bg-[#0f3828]  text-white border-solid border-[#000000] border-[1px] border-b-[5px] text-sm lg:text-base shadow-md rounded-xl">
                 Welcome to CropsDSS! Click the Crop tab to see your Recommended
                 crops for your city. To view more recommendations for other
                 cities, simply navigate to the input above and input a city.
@@ -83,7 +84,7 @@ const MainContent = ({
                 <>
                   {city && (
                     <div className="lg:py-6 py-6 flex lg:flex-row flex-col gap-4 justify-between w-5/6">
-                      <div className="bg-[#F2FED1] p-3 py-5 rounded-lg w-full lg:w-[70%] border-solid border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
+                      <div className="bg-[#0f3828] text-white p-3 py-5 rounded-lg w-full lg:w-[70%] border-solid border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
                         <CurrentWeather weatherData={weatherData} />
                       </div>
 
@@ -93,8 +94,8 @@ const MainContent = ({
                             <div>
                               <CiLocationOn className="text-black w-10 h-10 font-bold text-2xl" />
                             </div>
-                            <div className="border-black border-2 border-solid  p-3 rounded-full  bg-[#f2fed1] flex gap-1 items-center font-bold ">
-                              <div className="border-2 border-black rounded-full  bg-[#abf600] animate-pulse  w-3 h-3"></div>
+                            <div className="border-black border-2 border-solid  p-3 rounded-full  bg-[#00a884] flex gap-1 items-center font-bold ">
+                              <div className="border-[1px] border-black rounded-full  bg-[#ffff] animate-pulse   w-3 h-3"></div>
                               Location Active
                             </div>
                           </div>
@@ -112,11 +113,12 @@ const MainContent = ({
                     </div>
                   )}
                   {city && (
-                    <div className=" w-5/6 lg:mb-0 mb-20 border-solid lg:justify-center items-center flex-col lg:flex-col bg-[#f3f3f3] p-3 py-10 rounded-lg border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
-                      <div className="lg:text-lg hidden lg:block w-fit float-right text-right cursor-pointer tracking-wider bg-[#dffd8d] p-1.5 rounded-sm text-gray-700 font-semibold">
+                    <div className=" w-5/6 relative lg:mb-0 mb-20 border-solid lg:justify-center items-center flex-col lg:flex-col bg-[#f3f3f3] p-3 py-10 rounded-lg border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
+                      <div className="lg:text-lg absolute right-4 hidden lg:block w-fit float-right text-right cursor-pointer tracking-wider bg-[#dffd8d] p-1.5 rounded-sm text-gray-700 font-semibold">
                         Weather History
                       </div>
                       <div className="lg:m-8 flex justify-center">
+                        {/* <Rechart forecast={forecastData}/> */}
                         <WeatherChart forecast={forecastData} />
                       </div>
                     </div>

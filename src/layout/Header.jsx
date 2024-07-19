@@ -7,7 +7,7 @@ const Header = ({page}) => {
       <div className=" hidden lg:flex justify-between ml-14 items-center p-4 mb-4">
         <div className="flex items-center gap-4">
           <div className="font-semibold text-xl">
-            <span className="bg-[#F2FED1] p-1">{curPage}</span>
+            <span className="bg-[#00a884] text p-1">{curPage}</span>
           </div>
           <div className="">
             <Alert />
