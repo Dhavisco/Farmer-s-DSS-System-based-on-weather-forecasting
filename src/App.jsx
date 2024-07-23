@@ -40,9 +40,9 @@ function App() {
         setUserCity(Ipdata.city);
         setCity(Ipdata.city); // Set city to IP city
 
-        console.log(Ipdata)
+      
 
-        console.log("ipcity", Ipdata.city);
+        
       } catch (error) {
         console.log(error);
         setError(
@@ -69,7 +69,7 @@ function App() {
         const data = await getWeatherData(city);
         const forecasts = await getWeatherForecastData(city);
         const plant = await getRecommendedCropsData(city);
-          console.log(plant)
+          
         setWeatherData(data.data);
         setForecastData(forecasts.data.daily);
         setCropData(plant.recommended_crops);

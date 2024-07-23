@@ -6,13 +6,6 @@
 } */
 
 
-/* .leaflet-container{
-  height:400px;
-  width:100%;
-  position:relative;
-
-} */
-
 @media(min-width:1023px){
 canvas {
   width: 550px !important;
