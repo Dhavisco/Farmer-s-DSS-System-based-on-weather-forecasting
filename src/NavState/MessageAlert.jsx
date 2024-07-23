@@ -84,7 +84,7 @@ const MessageAlert = (onSubmit) => {
         </div>
         <button
           type="submit"
-          className="w-full py-2 px-4 text-black bg-[#0f3828] border-2 border-black hover:bg-[#0f3828] font-semibold rounded"
+          className="w-full py-2 px-4 text-white bg-[#0f3828] border-2 border-black hover:bg-[#0f3828] font-semibold rounded"
         >
           Sign Up for Alerts
         </button>

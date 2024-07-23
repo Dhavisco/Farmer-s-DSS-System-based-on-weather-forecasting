@@ -69,7 +69,7 @@ function App() {
         const data = await getWeatherData(city);
         const forecasts = await getWeatherForecastData(city);
         const plant = await getRecommendedCropsData(city);
-
+          console.log(plant)
         setWeatherData(data.data);
         setForecastData(forecasts.data.daily);
         setCropData(plant.recommended_crops);

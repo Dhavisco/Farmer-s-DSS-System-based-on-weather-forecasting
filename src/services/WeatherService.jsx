@@ -1,4 +1,7 @@
 // const API_KEY = import.meta.env.VITE_API_KEY;
+
+import Header from "../layout/Header";
+
 // const BASE_URL = import.meta.env.VITE_BASE_URL;
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 const USER_IP = import.meta.env.VITE_IP_URL;
@@ -146,7 +149,11 @@ export const getRecommendedCropsData = async (city) => {
 // };
 
 export const getUserIp = () => {
-  const data = fetch(`https://ipapi.co/json/`)
+  const data = fetch(`https://ipapi.co/json/`, {
+    headers: {
+      "Content-Type": "application/json;charset=utf-8",
+    },
+  })
     .then((response) => {
       // Handle the response here
       console.log(response);

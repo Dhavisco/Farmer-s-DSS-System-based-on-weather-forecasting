@@ -23,7 +23,7 @@ const Recommendation = ({ cropData, weatherData, city, setCity, error }) => {
             </div>
           )}
           {city && cropData && (
-            <div className="lg:w-5/6 ml-7 items-center flex w-full">
+            <div className="lg:w-5/6 lg:ml-[4.5rem] items-center flex w-full">
               <RecommendedCropsList
                 city={city}
                 weatherData={weatherData}

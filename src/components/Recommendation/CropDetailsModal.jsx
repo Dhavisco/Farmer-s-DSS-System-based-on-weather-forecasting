@@ -18,7 +18,7 @@ const CropDetailsModal = ({ crop, weatherData, onClose }) => {
 
   return (
     <div className="fixed -top-1 right-0 overflow-hidden bg-[#000000d5] backdrop-blur-sm w-screen h-screen z-50 flex items-center fade-in justify-center">
-      <div className="bg-[#f1e9e9] flex flex-col rounded-lg shadow-lg p-8 max-w-md mb-10">
+      <div className="bg-[#f1e9e9] text-black flex flex-col rounded-lg shadow-lg p-8 max-w-md mb-10">
         <div className="flex justify-end">
           <button
             className="border-[2.3px] mb-2 border-yellow-500 hover:border-yellow-600 text-gray-500 hover:text-gray-700"

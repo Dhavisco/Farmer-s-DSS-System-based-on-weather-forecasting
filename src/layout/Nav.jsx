@@ -19,7 +19,7 @@ const Nav = ({ active, setActive }) => {
             <div
               className={`lg:p-4 p-3 lg:pt-3  flex lg:gap-4 items-center text-xl hover:cursor-pointer lg:w-[20dvw] ${
                 active === index
-                  ? "lg:bg-[#0e6946] text-white lg:ml-[-1rem] lg:px-12 bg-[z] border-2 border-b-[5px] border-black rounded-2xl"
+                  ? "bg-[#0e6946] text-white lg:ml-[-1rem] lg:px-12 bg-[z] border-2 border-b-[5px] border-black rounded-2xl"
                   : "hover:bg-white lg:ml-[-1rem] lg:px-12 rounded-2xl"
               }`}
               onClick={() => setActive(index)}

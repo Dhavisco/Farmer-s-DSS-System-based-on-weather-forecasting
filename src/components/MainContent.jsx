@@ -114,7 +114,7 @@ const MainContent = ({
                   )}
                   {city && (
                     <div className=" w-5/6 relative lg:mb-0 mb-20 border-solid lg:justify-center items-center flex-col lg:flex-col bg-[#f3f3f3] p-3 py-10 rounded-lg border-[#000000] border-[0.2px] border-b-[5px] shadow-md">
-                      <div className="lg:text-lg absolute right-4 hidden lg:block w-fit float-right text-right cursor-pointer tracking-wider bg-[#dffd8d] p-1.5 rounded-sm text-gray-700 font-semibold">
+                      <div className="lg:text-lg absolute right-4 hidden lg:block w-fit float-right text-right cursor-pointer tracking-wider bg-[#00a884] p-1.5 rounded-sm text-black font-semibold">
                         Weather History
                       </div>
                       <div className="lg:m-8 flex justify-center">
@@ -135,7 +135,7 @@ const MainContent = ({
                         <span className="bg-[#F2FED1] p-1">Map</span>
                       </div> */}
 
-                      <div className="text-lg flex items-center cursor-pointer gap-4 tracking-wider bg-[#dffd8d] p-1.5 rounded-sm text-gray-700 font-semibold">
+                      <div className="text-lg flex items-center cursor-pointer gap-4 tracking-wider bg-[#00a884] p-1.5 rounded-sm text-black font-semibold">
                         Live Location
                       </div>
                     </div>
@@ -179,7 +179,7 @@ MainContent.propTypes = {
 
 export default MainContent;
 
-// import WeatherInput from "./Weather/WeatherInput";
+
 // import CurrentWeather from "./Weather/CurrentWeather";
 // import WeatherChart from "./Weather/WeatherChart";
 // import RecommendedCropsList from "./Recommendation/RecommendedCropsList";
